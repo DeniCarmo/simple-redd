@@ -1,0 +1,64 @@
+@import '../main';
+
+.search{
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    padding-top: 100px;
+    margin: 0 auto;
+
+    .search{
+
+        &-input{
+            @include text(16, 16, 300, $color1, $openSans);
+            width: 100%;
+            height: auto;
+            min-height: 40px;
+            border: 2px solid $color2;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-indent: 10px;
+
+            &:hover, &:focus, &:active, &:visited{
+                outline: none;
+            }
+        }
+
+        &-select{
+            @include text(16, 16, 300, $color1, $openSans);
+            width: 100%;
+            height: auto;
+            min-height: 40px;
+            border: 2px solid $color2;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-indent: 10px;
+        }
+
+        &-label{
+            @include text(18, 18, 300, $white, $openSans);
+            margin-bottom: 15px;
+        }
+
+        &-submit{
+            @include text(18, 18, 300, $white, $openSans);
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: $color3;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+}

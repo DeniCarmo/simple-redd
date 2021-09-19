@@ -1,0 +1,29 @@
+/* Variables */
+$color1: #2c3e50;
+$color2: #EBEBEB;
+$color3: #1a936f;
+$color4: #ca054d;
+$color5: #8075ff;
+$black: #000;
+$white: #fff;
+
+/* Fonts */
+$raleway: 'Raleway', sans-serif;
+$openSans: 'Open  Sans', sans-serif;
+
+/* Mixins */
+$base-size: 16;
+
+@function convert($target, $context: $base-size){
+    @return ($target / $context) * 1rem;
+}
+
+@mixin text($size, $lineHeight, $weight, $color, $family){
+    font-size: convert($size);
+    line-height: $lineHeight + px;
+    font-weight: $weight;
+    color: $color;
+    font-family: $family;
+}
+
+/* Keyframes */

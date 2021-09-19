@@ -1,0 +1,22 @@
+@import '../main';
+
+.logo{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    .logo{
+        
+        &-top{
+            @include text(30, 30, 700, $white, $raleway);
+            display: block;
+        }
+
+        &-bottom{
+            @include text(34, 34, 600, $color4, $raleway);
+            font-style: italic;
+            display: block;
+        }
+    }
+}

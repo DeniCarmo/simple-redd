@@ -9,7 +9,9 @@
 export default{
     name: 'Logo',
     data(){
-
+        return{
+            
+        }
     }
 }
 </script>

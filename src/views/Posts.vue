@@ -1,37 +1,39 @@
 <template>
     <section class="posts">
-        <Post
-            :name="this.data[0].data.subreddit"
+        <PostSub
+            :name="data[0].data.author"
+            v-if="data"
         />
     </section>
 </template>
 
 <script>
-import Post from '@/components/Post.vue'
+import PostSub from '@/components/PostSub.vue'
+import axios from 'axios'
 
 export default{
     name: 'Posts',
     data(){
         return{
-            type: null,
-            id: null,
-            data: null
+            type: '',
+            id: '',
+            data: ''
         }
     },
     components:{
-        Post
+        PostSub
     },
     methods:{
         getData(){
             this.type = this.$route.params.type;
             this.id = this.$route.params.id;
-            console.log(this.type + ' - ' + this.id);
-            fetch(`https://reddit.com/${this.type}/${this.id}.json?limit=100`)
-            .then(r=>r.json())
-            .then(r=>{
-                this.data = r.data.children;
+            axios.get(`https://reddit.com/${this.type}/${this.id}.json?limit=100`)
+            .then(res=>{
+                this.data = res.data.data.children;
                 console.log(this.data);
-            })
+            }).catch(err=>{
+                console.log(err);
+            });
         }
     },
     created(){

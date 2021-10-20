@@ -1,6 +1,6 @@
 <template>
     <div class="post">
-        <h1>{{ name }}</h1>
+        <h1>{{ subName }}</h1>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default{
 
         }
     },
-    props:['name']
+    props:['subName']
 }
 </script>
 

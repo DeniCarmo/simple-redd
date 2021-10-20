@@ -1,14 +1,23 @@
 <template>
-    <section class="posts">
-        <PostSub
-            :name="data[0].data.author"
-            v-if="data"
-        />
+    <section class="posts container">
+        <div class="row">
+            <PostSub
+                :subName="data[0].data.author"
+                v-if="data && $route.params.type == 'r'"
+            />
+
+            <PostUser
+                :userName="data[0].data.author"
+                v-if="data && $route.params.type == 'user'"
+                :userData="data"
+            />
+        </div>
     </section>
 </template>
 
 <script>
 import PostSub from '@/components/PostSub.vue'
+import PostUser from '@/components/PostUser.vue'
 import axios from 'axios'
 
 export default{
@@ -21,7 +30,8 @@ export default{
         }
     },
     components:{
-        PostSub
+        PostSub,
+        PostUser
     },
     methods:{
         getData(){

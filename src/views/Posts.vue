@@ -1,9 +1,13 @@
 <template>
     <section class="posts container">
         <div class="row">
+            <div class="col-12">
+                <Logo/>
+            </div>
             <PostSub
                 :subName="data[0].data.author"
                 v-if="data && $route.params.type == 'r'"
+                :subData="data"
             />
 
             <PostUser
@@ -16,6 +20,7 @@
 </template>
 
 <script>
+import Logo from '@/components/Logo.vue'
 import PostSub from '@/components/PostSub.vue'
 import PostUser from '@/components/PostUser.vue'
 import axios from 'axios'
@@ -30,6 +35,7 @@ export default{
         }
     },
     components:{
+        Logo,
         PostSub,
         PostUser
     },

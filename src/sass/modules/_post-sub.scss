@@ -9,7 +9,7 @@
 
     .post{
 
-        &-username{
+        &-subName{
             @include text(24, 24, 700, $color2, $raleway);
             text-align: center;
             margin-top: 40px;
@@ -83,6 +83,11 @@
                 width: 100%;
                 height: auto;
                 display: block;
+                margin-bottom: 20px;
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
 
                 &-text{
                     @include text(16, 18, 600, $color5, $raleway);
@@ -125,6 +130,10 @@
             &-link{
                 @include text(14, 14, 600, $color4, $openSans);
                 margin-left: 5px;
+
+                &:first-child{
+                    margin-right: 5px;
+                }
             }
         }
 

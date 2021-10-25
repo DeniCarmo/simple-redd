@@ -5,6 +5,11 @@
     text-align: center;
     margin: 0 auto;
     padding-top: 50px;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active, &:visited{
+        text-decoration: none;
+    }
 
     .logo{
         
